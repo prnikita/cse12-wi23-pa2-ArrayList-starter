@@ -33,6 +33,18 @@ You will find the following files:
 |   +-- MyArrayList.java (empty)       Edit this file
 ```
 
+#### How to run and compile the testers:
+Running the tester on UNIX based systems (including a mac):
+
+* Compile: `javac -cp ../libs/junit-4.13.2.jar:../libs/hamcrest-2.2.jar:. MyArrayListPublicTester.java`
+* Execute: `java -cp ../libs/junit-4.13.2.jar:../libs/hamcrest-2.2.jar:. org.junit.runner.JUnitCore MyArrayListPublicTester`
+
+Running the tester on Windows systems:
+
+* Compile: `javac -cp ".;..\libs\junit-4.13.2.jar;..\libs\hamcrest-2.2.jar" MyArrayListPublicTester.java`
+* Execute: `java -cp ".;..\libs\junit-4.13.2.jar;..\libs\hamcrest-2.2.jar" org.junit.runner.JUnitCore MyArrayListPublicTester`
+
+To run the hidden tester, replace references to `MyArrayListPublicTester` with `MyArrayListHiddenTester` in the above commands.
 
 ### Part 1: JUnit Testing (20 points)
 
