@@ -3,7 +3,7 @@
 
 **Due Date: Thursday, January 26, 2023, 11:59pm PST**
 
-[There is an FAQ post on Piazza.](https://piazza.com/class/l13wms7xy056n?cid=195)  Please read that post first if you have any questions.
+[There is an FAQ post on Piazza.](https://piazza.com/class/lch5pcfyhil3n8/post/126)  Please read that post first if you have any questions.
 
 
 ### **Learning goals:**
