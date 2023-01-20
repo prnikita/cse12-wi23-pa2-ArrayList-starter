@@ -72,7 +72,7 @@ public class MyArrayListPublicTester {
 
         assertArrayEquals("Check for successful append", 
                 new Integer[]{1, 2, null}, listNonEmpty.data);
-        assertEquals("Check list size after the append", 2, listNonempty.size);
+        assertEquals("Check list size after the append", 2, listNonEmpty.size);
     }
 
     /**
@@ -110,7 +110,7 @@ public class MyArrayListPublicTester {
 
         assertArrayEquals("Check for successful prepend", 
         new Integer[]{2, 1, null}, listNonEmpty.data);
-        assertEquals("Check list size after the prepend", 2, listNonempty.size);
+        assertEquals("Check list size after the prepend", 2, listNonEmpty.size);
     }
 
     /**
