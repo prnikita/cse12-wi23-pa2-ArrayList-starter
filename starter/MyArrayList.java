@@ -65,8 +65,28 @@ public class MyArrayList implements MyList {
      */
     public void expandCapacity(int requiredCapacity) {
 
+        //if current capacity is 0
+        if (getCapacity()==0) {
+            Object[] duplicate_array = new Object [DEFAULT_CAPACITY];
+        }
 
+        //if current capacity is non-zero
+        else {
+            Object[] duplicate_array = new Object [getCapacity()+3];
+        }
 
+        //if array capacity is still insufficient
+        if (getCapacity() < requiredCapacity) {
+            Object[] duplicate_array = new Object [requiredCapacity];
+        }
+
+        //copying over all elements from data to duplicate
+        for (int i=0; i < this.size - 1; i++) {
+            duplicate_array[i] = this.data[i];
+        }
+
+        //set duplicate_array equals data
+        this.data = duplicate_array;
     }
 
     /**
@@ -74,12 +94,16 @@ public class MyArrayList implements MyList {
      */
     public int getCapacity() {
         int i = 0; 
+
+        //counting capacity 
         while (true) {
             try {
-
-
+                this.data[i] = this.data[i];
+                i += 1; 
             }
-
+            catch (Exception e) {
+                return i; 
+            } 
         }
 
     }
@@ -100,9 +124,9 @@ public class MyArrayList implements MyList {
         }
 
         //inserting element into appropriate index
-        this.data[index] = element; 
+        this.data[index] = (Object)element; 
 
-        //increasing size by 1
+        //increasing size by one
         this.size++; 
     }
 
@@ -117,7 +141,7 @@ public class MyArrayList implements MyList {
         }
 
         //append element to the end of the arraylist
-        this.data[this.size] = element; 
+        this.data[this.size] = (Object)element; 
         size++; //increasing size by 1
     }
 
@@ -130,6 +154,58 @@ public class MyArrayList implements MyList {
         if ((getCapacity()-this.size) == 0) {
             expandCapacity(this.size + 1);
         }
+
+        //shifting all existing data by one index
+        for (int i=0; i<this.size-1; i++) {
+            this.data[i+1] = this.data[i]; 
+        }
+
+        //inserting element at the beginning of arraylist
+        this.data[0] = (Object)element; 
+    }
+
+    /*
+     * Getting element at a specified index
+     */
+    public E get(int index) {
+
+        //if index is out of bounds
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return (E)this.data[index];
+    }
+
+    /*
+     * place element at specified index
+     */
+    public E set(int index, E element) {
+
+        //if index is out of bounds
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+        else {
+            this.data[index] = element;
+            return element;
+        }
+    }
+
+    /**
+     * Removing element at specified index
+     */
+    public E remove(int index) {
+        if (index < 0 || index >= this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+        for (int i=index; i < this.size; i++) {
+            this.data[i-1] = this.data[i];
+        }
+        
+        //decreasing size by one
+        this.size--;
+
+        return this.data[index];
     }
 
     /**
